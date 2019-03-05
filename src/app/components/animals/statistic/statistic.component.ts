@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { AnimalsService } from "../animals.service";
 
 @Component({
-  selector: 'app-statistic',
-  templateUrl: './statistic.component.html',
-  styleUrls: ['./statistic.component.css']
+  selector: "app-statistic",
+  templateUrl: "./statistic.component.html",
+  styleUrls: ["./statistic.component.css"]
 })
 export class StatisticComponent implements OnInit {
+  
+  statistic:any;
 
-  constructor() { }
+  constructor(public animalsService: AnimalsService) {}
+
 
   ngOnInit() {
+    this.animalsService.getStatistic().subscribe(data =>
+      this.statistic = data);
   }
-
 }

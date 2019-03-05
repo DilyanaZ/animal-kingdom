@@ -1,3 +1,8 @@
-<p>
-  statistic works!
-</p>
+<h2>
+    The statisitic for all animals and users is as follows:
+</h2>
+<div class="container-fluid">
+    <div *ngIf="statistic">
+        <h2>{{statistic | json}}</h2>
+    </div>
+</div>

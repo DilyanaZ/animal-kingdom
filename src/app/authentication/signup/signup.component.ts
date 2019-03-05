@@ -17,7 +17,8 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
+
   signUp(){
-    this.authService.signup(this.model). subscribe();
+    this.authService.signup(this.model).subscribe();
   }
 }
