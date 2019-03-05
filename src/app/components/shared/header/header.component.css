@@ -1,0 +1,12 @@
+nav,
+nav>a,
+ul,
+li,
+li>a {
+    color: white;
+    background-color: dodgerblue;
+}
+
+nav {
+    width: 100%;
+}

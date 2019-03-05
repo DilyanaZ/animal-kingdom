@@ -1,0 +1,11 @@
+h2 {
+    color: white;
+    text-shadow: 3px 3px 3px rgb(50, 22, 126);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+image {
+    height: 500px;
+    width: 900px;
+}

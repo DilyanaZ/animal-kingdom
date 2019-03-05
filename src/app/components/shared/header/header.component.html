@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">AnimalKingdom</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-5">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/home" appHighlight> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/all" appHighlight>Animals</a>
+            </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" routerLinkActive="active" routerLink="/stats" appHighlight>Statistic</a>
+            </li>
+            <li appHighlight class="nav-item dropdown">
+                <div class="row">
+                    <div class="col">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>Profile Page</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <a class="dropdown-item" routerLink="/create" appHighlight>Create new  animal</a>
+                                <a class="dropdown-item" appHighlight>Another Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 mx-4">
+            <input class="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <a appHighlight class="btn btn-outline-light my-2 my-sm-0 mx-2" routerLink='/signup' routerLinkActive="router-link-active">Sign up</a>
+    <a appHighlight class="btn btn-outline-light my-2 my-sm-0" routerLink='/login'>Login</a>
+    <button class="btn btn-outline-light my-2 my-sm-0 mx-2" (click)="logOut()">Log out</button>
+</nav>
