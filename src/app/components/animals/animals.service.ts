@@ -29,7 +29,7 @@ export class AnimalsService {
   }
 
   getAnimalDetails(id:string){
-      return this.http.get<Animal>(detailsUrl + id);
+      return this.http.get(detailsUrl + id);
   }
 
   getAllAnimals() {

@@ -11,16 +11,18 @@ import { Observable } from "rxjs";
 })
 export class DetailsAnimalComponent implements OnInit {
   pageTitle = "Animal Details";
-  animal: Animal;
+  //animal: Animal;
   id: string;
-
+  animal: any;
   constructor(
     private animalsService: AnimalsService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.id = this.route.snapshot.params["id"];
+  }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params["id"];
+   
     this.animalsService
       .getAnimalDetails(this.id)
       .subscribe(data => (this.animal = data));
