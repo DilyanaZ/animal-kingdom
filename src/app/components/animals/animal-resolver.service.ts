@@ -14,10 +14,12 @@ import { tap, map } from "rxjs/operators";
 
       resolve (route:ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable <Animal>{
           const id =  route.paramMap.get('id');
-          return this.animalsService.getAnimalDetails(id).pipe(
-            tap(animal => ({
-                animal: animal
-            }))
-        );
+        // //   return this.animalsService.getAnimalDetails(id).pipe(
+        // //     tap(animal => ({
+        // //         animal: animal
+        // //     }))
+        
+        // );
+        return null;
       }
   }

@@ -22,11 +22,11 @@ export class DetailsAnimalComponent implements OnInit {
   }
 
   ngOnInit() {
-   
     this.animalsService
       .getAnimalDetails(this.id)
-      .subscribe(data => (this.animal = data));
-    console.log(this.animal);
-    console.log(this.id);
-  }
+      .subscribe(data => {
+        console.log(data);
+        this.animal = data;
+      });
+     }
 }
