@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 import { StatisticComponent } from './statistic/statistic.component';
 import { FileUploadModule } from "ng2-file-upload";
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CommentsFormComponent } from './comments-form/comments-form.component';
+import { AddReactionsComponent } from './add-reactions/add-reactions.component';
 
 
 
@@ -22,7 +24,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
    AnimalComponent,
    DetailsAnimalComponent,
    MineAnimalsComponent,
-   StatisticComponent
+   StatisticComponent,
+   CommentsFormComponent,
+   AddReactionsComponent
  ],
  imports:[
     CommonModule,

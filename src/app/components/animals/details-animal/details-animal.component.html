@@ -3,15 +3,18 @@
 </h2>
 <div class="card" *ngIf="animal">
     <h4>Detailed information</h4>
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="card-img-top" src="../../../../assets/animals-images/{{animal.image}}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">Animal name: <span>{{animal.name}}</span></h5>
         <h5 class="card-title">Animal price: <span>{{animal.price}} euro</span></h5>
         <p class="card-text">Animal type: <span>{{animal.type}}</span></p>
         <p class="card-text">Animal age: <span>{{animal.age}}</span></p>
         <p class="card-text">Animal color: <span>{{animal.color}}</span></p>
+        <p class="card-text">Animal reactions: <span>{{animal.reactions | json}}</span></p>
         <p class="card-text">Animal likes: <span>{{animal.reactions.like}}</span></p>
         <p class="card-text">Animal love: <span>{{animal.reactions.love}}</span></p>
-        <p class="card-text"><small class="text-muted">Animal price: <span>{{animal.price}}</span> euro</small></p>
+        <p class="card-text"><small class="text-muted">Animal id: <span>{{animal.id}}</span></small></p>
+        <a class="btn btn-outline-info mr-3" routerLink='/details/{{animal.id}}/comments' routerLinkActive="router-link-active">add comment</a>
+        <a class="btn btn-outline-info" routerLink='/details/{{animal.id}}/reactions'>add reactionst</a>
     </div>
 </div>

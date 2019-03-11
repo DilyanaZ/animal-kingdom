@@ -4,3 +4,34 @@ h2 {
     color: white;
     text-shadow: 3px 3px 3px rgb(50, 22, 126);
 }
+
+h4 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: royalblue;
+    text-shadow: 3px 3px 3px rgb(201, 198, 198);
+}
+
+div.card {
+    background-color: lemonchiffon;
+}
+
+span,
+a.btn {
+    color: royalblue;
+}
+
+a.btn:hover {
+    color: white;
+}
+
+p {
+    color: dimgray;
+}
+
+
+/* 
+img {
+    width: 400px;
+    height: auto;
+} */
