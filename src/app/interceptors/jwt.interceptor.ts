@@ -31,15 +31,37 @@ export class JwtInterceptor implements HttpInterceptor {
       tap((res: any) => {
         if (res instanceof HttpResponse && res.body.token) {
           this.saveToken(res.body);
-          this.toastr.success(res.body.message, "Success",{
-            progressBar: true
+          this.toastr.success(res.body.message, "Success", {
+            timeOut: 3000
           });
         }
-        if (res instanceof HttpResponse && res.body.success && res.url.endsWith('signup')) {
-            this.toastr.success(res.body.message, "Success!",{
-                progressBar: true
-              });
-            this.router.navigate(['/login']);
+        if (
+          res instanceof HttpResponse &&
+          res.body.success &&
+          res.url.endsWith("signup")
+        ) {
+          this.toastr.success(res.body.message, "Success!", {
+            timeOut: 3000,
+            closeButton: true
+          });
+          this.router.navigate(["/login"]);
+        }
+        if (
+          res instanceof HttpResponse &&
+          res.body.success &&
+          res.url.endsWith("login")
+        ) {
+          this.toastr.success(res.body.message, "Success!", {
+            timeOut: 3000
+          });
+          this.router.navigate(["/home"]);
+        }
+
+        if(res instanceof HttpResponse && res.body.siccess && res.url.endsWith('/create')){
+          this.toastr.success(res.body.message, "Success!", {
+            timeOut: 3000
+          });
+          this.router.navigate(["/mine"]);
         }
       })
     );

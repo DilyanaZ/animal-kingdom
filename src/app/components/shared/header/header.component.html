@@ -5,24 +5,24 @@
 </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-5">
-            <li class="nav-item">
+        <ul class="navbar-nav ml-5">
+            <li class="nav-item mr-3">
                 <a class="nav-link" routerLinkActive="active" routerLink="/home" appHighlight> Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="/all" appHighlight>Animals</a>
+            <li class="nav-item mr-3">
+                <a class="nav-link" routerLinkActive="active" [routerLink]='["all"]' appHighlight>Animals List</a>
             </li>
-            <li class="nav-item mr-5">
-                <a class="nav-link" routerLinkActive="active" routerLink="/stats" appHighlight>Statistic</a>
+            <li class="nav-item mr-3">
+                <a class="nav-link" routerLinkActive="active" routerLink="/stats" appHighlight>Show Statistic</a>
             </li>
-            <li appHighlight class="nav-item dropdown">
+            <li class="nav-item dropdown ml-3">
                 <div class="row">
                     <div class="col">
                         <div ngbDropdown class="d-inline-block">
                             <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>Profile Page</button>
                             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                <a class="dropdown-item" routerLink="/create" appHighlight>Create new  animal</a>
-                                <a class="dropdown-item" appHighlight>Another Action</a>
+                                <a class="dropdown-item" routerLinkActive="active" routerLink="/create">ADD new  animal</a>
+                                <a class="dropdown-item" routerLinkActive="active" routerLink="/mine">My Animals</a>
                             </div>
                         </div>
                     </div>

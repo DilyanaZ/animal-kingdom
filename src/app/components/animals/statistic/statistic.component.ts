@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, DoCheck } from "@angular/core";
 import { AnimalsService } from "../animals.service";
 
 @Component({
@@ -6,15 +6,16 @@ import { AnimalsService } from "../animals.service";
   templateUrl: "./statistic.component.html",
   styleUrls: ["./statistic.component.css"]
 })
-export class StatisticComponent implements OnInit {
-  
-  statistic:any;
+export class StatisticComponent implements OnInit, DoCheck {
+  statistic: any;
 
   constructor(public animalsService: AnimalsService) {}
 
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.animalsService.getStatistic().subscribe(data =>
-      this.statistic = data);
+  ngDoCheck() {
+    this.animalsService
+      .getStatistic()
+      .subscribe(data => (this.statistic = data));
   }
 }

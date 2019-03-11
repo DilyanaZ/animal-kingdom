@@ -1,0 +1,19 @@
+form {
+    width: 60%;
+    margin: 0 auto;
+    z-index: 2;
+    padding-bottom: 30px;
+}
+
+div.page {
+    margin: 0 auto;
+    align-content: center;
+    z-index: 2;
+}
+
+h2 {
+    color: white;
+    text-shadow: 3px 3px 3px rgb(50, 22, 126);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

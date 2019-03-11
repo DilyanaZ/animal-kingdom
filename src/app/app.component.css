@@ -1,13 +1,14 @@
     html,
     body,
     div.container-fluid {
-        background-color: lightsteelblue;
+        background-color: rgb(212, 214, 218);
     }
     
     h1 {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Courier, monospace, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         background-color: azure;
         color: rgb(9, 100, 190);
+        text-shadow: 3px 3px 3px rgb(119, 104, 161);
         margin-bottom: 0;
         padding: 10px 0 10px 0;
     }

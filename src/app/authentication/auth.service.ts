@@ -7,7 +7,9 @@ import { LoginModel } from "./models/login.model";
 const loginUrl = "http://localhost:5000/auth/login";
 const signupUrl = "http://localhost:5000/auth/signup";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
   constructor(private http: HttpClient) {}
 

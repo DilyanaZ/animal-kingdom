@@ -3,6 +3,7 @@
 </h2>
 <div class="container-fluid">
     <div *ngIf="statistic">
-        <h2>{{statistic | json}}</h2>
+        <h2>Number of animals: {{statistic['animals'] | json}}</h2>
+        <h2>Number of users: {{statistic['users'] | json}}</h2>
     </div>
 </div>

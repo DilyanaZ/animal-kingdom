@@ -1,3 +1,10 @@
-<p>
-  animal works!
-</p>
+<div class="card">
+    <h4>Basic information</h4>
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Animal name: <span>{{animal.name}}</span></h5>
+        <p class="card-text">Animal type: <span>{{animal.type}}</span></p>
+        <p class="card-text"><small class="text-muted">Animal price: <span>{{animal.price}}</span> euro</small></p>
+    </div>
+    <button class="btn btn-outline-info" routerLink="../details/{{animal.id}}" routerLinkActive="router-link-active">Details</button>
+</div>

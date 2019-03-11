@@ -8,7 +8,7 @@ h2 {
 div.container-fluid {
     height: 400px;
     /* background-color: #cccccc; */
-    background-image: radial-gradient(rgb(213, 226, 235), rgb(173, 196, 235), rgb(122, 68, 209));
+    background-image: radial-gradient(rgb(174, 179, 184), rgb(173, 196, 235), rgb(95, 123, 216));
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;

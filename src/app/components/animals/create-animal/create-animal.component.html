@@ -1,3 +1,48 @@
-<p>
-  create-animal works!
-</p>
+<div class="container" [ngStyle]="getMyStyles()">
+    <h2>Create an Animal</h2>
+    <div class="page">
+        <form #animalForm="ngForm" (ngSubmit)="save()">
+            <div class="form-group">
+                <label for="name">Animal name:</label>
+                <input type="text" class="form-control" id="name" placeholder="name(required)" [(ngModel)]="animalModel.name" name="animalName" #animalName="ngModel" required>
+                <div [hidden]="animalName.valid || animalName.untouched" class="alert alert-danger">This field is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" placeholder="age(required)" [(ngModel)]="animalModel.age" name="age" #age="ngModel" required>
+                <div [hidden]="age.valid || age.untouched" class="alert alert-danger">This field is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" class="form-control" id="color" placeholder="color(required)" [(ngModel)]="animalModel.color" name="color" #color="ngModel" minlength="3" required>
+                <div [hidden]="color.valid || color.pristine" class="alert alert-danger">This field is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="type">Animal type:</label>
+                <select class="form-control" id="type" [(ngModel)]="animalModel.type" name="animalType" #animalType="ngModel" required>
+                  <option>Cat</option>
+                  <option>Dog</option>
+                  <option>Bunny</option>
+                  <option>Exotic</option>
+                  <option>Other</option>
+               </select>
+                <div [hidden]="animalType.valid || animalType.untouched" class="alert alert-danger">This field is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" placeholder="price(required)" [(ngModel)]="animalModel.price" name="price" #price="ngModel" required>
+                <div [hidden]="price.valid || price.untouched" class="alert alert-danger">This field is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="image">Image file input</label>
+                <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*" name="image" #image required>
+                <div *ngIf="image.invalid && image.dirty" class="alert alert-danger">Image URL is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="breed">Color:</label>
+                <input type="text" class="form-control" id="breed" placeholder="breed(optional)">
+            </div>
+            <button type="submit" [disabled]="animalForm.form.invalid" class="btn btn-outline-info">Save</button>
+        </form>
+    </div>
+</div>

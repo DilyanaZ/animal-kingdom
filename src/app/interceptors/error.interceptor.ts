@@ -19,22 +19,20 @@ export class ErrorInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
-      catchError((err: HttpErrorResponse) => {
+      catchError(err => {
         const message = err.error.message;
+
         switch (err.status) {
           case 401:
-            this.toastr.error(message, "Warning!",{
-                progressAnimation: 'decreasing' 
-            });
+            this.toastr.error(message, "Warning!");
             break;
           case 400:
             this.toastr.error(
               Object.keys(err.error.errors)
                 .map(a => err.error.errors[a])
                 .join("\n"),
-              "Warning!",{
-                progressAnimation: 'decreasing' 
-            });
+              "Warning!"
+            );
             break;
         }
         return throwError(err);

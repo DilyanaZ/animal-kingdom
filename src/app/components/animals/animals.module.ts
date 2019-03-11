@@ -10,6 +10,10 @@ import { AnimalsService } from './animals.service';
 import { AnimalsRoutingModule } from './animals-routing.module';
 import { CommonModule } from '@angular/common';
 import { StatisticComponent } from './statistic/statistic.component';
+import { FileUploadModule } from "ng2-file-upload";
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 
 @NgModule({
  declarations:[
@@ -24,8 +28,10 @@ import { StatisticComponent } from './statistic/statistic.component';
     CommonModule,
     FormsModule,
     BrowserModule,
-    AnimalsRoutingModule
- ], 
+    AnimalsRoutingModule,
+    FileUploadModule,
+    NgxPaginationModule
+  ], 
  providers:[
    AnimalsService
  ]
