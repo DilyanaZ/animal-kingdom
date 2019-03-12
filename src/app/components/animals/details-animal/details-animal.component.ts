@@ -14,6 +14,7 @@ export class DetailsAnimalComponent implements OnInit {
   //animal: Animal;
   id: string;
   animal: any;
+  isReactionAdded: boolean = false;
   constructor(
     private animalsService: AnimalsService,
     private route: ActivatedRoute
@@ -29,5 +30,9 @@ export class DetailsAnimalComponent implements OnInit {
     //   console.log(data);
     //   this.animal = data;
     // });
+  }
+
+  addReaction(){
+    this.isReactionAdded = true;
   }
 }

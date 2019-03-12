@@ -5,7 +5,7 @@ h2 {
     text-shadow: 3px 3px 3px rgb(50, 22, 126);
 }
 
-h4 {
+h3 {
     padding-top: 20px;
     padding-bottom: 20px;
     color: royalblue;
@@ -17,16 +17,20 @@ div.card {
 }
 
 span,
-a.btn {
+button.btn {
     color: royalblue;
 }
 
-a.btn:hover {
+button.btn:hover {
     color: white;
 }
 
 p {
     color: dimgray;
+}
+
+div.blockquote {
+    padding-top: 20px;
 }
 
 

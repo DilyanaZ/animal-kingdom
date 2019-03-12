@@ -6,8 +6,6 @@ import { CreateAnimalComponent } from "./create-animal/create-animal.component";
 import { MineAnimalsComponent } from "./mine-animals/mine-animals.component";
 import { StatisticComponent } from "./statistic/statistic.component";
 import { AnimalsResolver } from "./animals.resolver";
-import { AddReactionsComponent } from "./add-reactions/add-reactions.component";
-import { CommentsFormComponent } from "./comments-form/comments-form.component";
 import { AnimalDetailsResolver } from './animal-resolver.service';
 
 const animalsRoutes: Routes = [
@@ -22,20 +20,9 @@ const animalsRoutes: Routes = [
     path: "details/:id",
     component: DetailsAnimalComponent, 
     resolve: {animal: AnimalDetailsResolver}
-    // children:[
-    //   { path:'comments', component: CommentsFormComponent},
-    //   { path:'reactions', component: AddReactionsComponent }
-    // ]
+  
   },
-  {
-    path: "details/:id/comments",
-    component: CommentsFormComponent
-  },
-  {
-    path: "details/:id/reactions",
-    component: AddReactionsComponent
-  },
-  { path: "create", component: CreateAnimalComponent },
+   { path: "create", component: CreateAnimalComponent },
   { path: "mine", component: MineAnimalsComponent }
 
   //search component

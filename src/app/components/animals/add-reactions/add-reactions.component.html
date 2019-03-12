@@ -1,3 +1,14 @@
-<p>
-  add-reactions works!
-</p>
+<div class="container col-6 text-center">
+    <h3>
+        Add animal reaction!
+    </h3>
+    <h4>Select reaction</h4>
+    <mat-form-field>
+        <mat-select placeholder="Reactions">
+            <mat-option *ngFor="let reaction of reactions" [value]="reaction.value">
+                {{reaction.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>

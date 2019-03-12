@@ -1,0 +1,11 @@
+h3,
+h4 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: royalblue;
+    text-shadow: 3px 3px 3px rgb(201, 198, 198);
+}
+
+div {
+    background-color: rgb(243, 239, 199);
+}

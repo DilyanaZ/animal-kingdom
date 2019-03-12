@@ -2,7 +2,7 @@
     {{pageTitle}}
 </h2>
 <div class="card" *ngIf="animal">
-    <h4>Detailed information</h4>
+    <h3>Detailed information</h3>
     <img class="card-img-top" src="../../../../assets/animals-images/{{animal.image}}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">Animal name: <span>{{animal.name}}</span></h5>
@@ -14,7 +14,12 @@
         <p class="card-text">Animal likes: <span>{{animal.reactions.like}}</span></p>
         <p class="card-text">Animal love: <span>{{animal.reactions.love}}</span></p>
         <p class="card-text"><small class="text-muted">Animal id: <span>{{animal.id}}</span></small></p>
-        <a class="btn btn-outline-info mr-3" routerLink='/details/{{animal.id}}/comments' routerLinkActive="router-link-active">add comment</a>
-        <a class="btn btn-outline-info" routerLink='/details/{{animal.id}}/reactions'>add reactionst</a>
+        <button class="btn btn-outline-info mr-3" (click)="addReaction()">add comment</button>
+        <button class="btn btn-outline-info" (click)="addReaction()">add reactionst</button>
+        <br>
+        <div class='blockquote'>
+            <app-add-reactions *ngIf="isReactionAdded"></app-add-reactions>
+        </div>
+
     </div>
 </div>
