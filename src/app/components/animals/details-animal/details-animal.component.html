@@ -14,11 +14,14 @@
         <p class="card-text">Animal likes: <span>{{animal.reactions.like}}</span></p>
         <p class="card-text">Animal love: <span>{{animal.reactions.love}}</span></p>
         <p class="card-text"><small class="text-muted">Animal id: <span>{{animal.id}}</span></small></p>
-        <button class="btn btn-outline-info mr-3" (click)="addReaction()">add comment</button>
+        <button class="btn btn-outline-info mr-3" (click)="addComment()">add comment</button>
         <button class="btn btn-outline-info" (click)="addReaction()">add reactionst</button>
         <br>
         <div class='blockquote'>
-            <app-add-reactions *ngIf="isReactionAdded"></app-add-reactions>
+            <app-add-reactions [animalId]="animal.id" *ngIf="isReactionAdded"></app-add-reactions>
+        </div>
+        <div class='blockquote'>
+            <app-comments-form [animalId]="animal.id" *ngIf="isCommentAdded"></app-comments-form>
         </div>
 
     </div>

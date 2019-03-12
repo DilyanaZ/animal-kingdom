@@ -3,6 +3,8 @@ import { Animal } from "../../models/animal";
 import { ActivatedRoute } from "@angular/router";
 import { AnimalsService } from "../animals.service";
 import { Observable } from "rxjs";
+import { AnimalDetailsResolver } from '../animal-resolver.service';
+
 
 @Component({
   selector: "app-details-animal",
@@ -10,11 +12,13 @@ import { Observable } from "rxjs";
   styleUrls: ["./details-animal.component.css"]
 })
 export class DetailsAnimalComponent implements OnInit {
+
   pageTitle = "Animal Details";
   //animal: Animal;
   id: string;
   animal: any;
   isReactionAdded: boolean = false;
+  isCommentAdded:boolean = false;
   constructor(
     private animalsService: AnimalsService,
     private route: ActivatedRoute
@@ -34,5 +38,8 @@ export class DetailsAnimalComponent implements OnInit {
 
   addReaction(){
     this.isReactionAdded = !this.isReactionAdded;
+  }
+  addComment(){
+    this.isCommentAdded = !this.isCommentAdded;
   }
 }

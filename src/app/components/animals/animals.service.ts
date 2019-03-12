@@ -13,6 +13,7 @@ const deleteUrl = "http://localhost:5000/animals/delete/";
 // const searchUrl = "http://localhost:5000/furniture/all?search=";
 const statsUrl = "http://localhost:5000/stats";
 
+
 @Injectable()
 export class AnimalsService {
   animals: Array<AnimalModel> = [];
@@ -39,4 +40,9 @@ export class AnimalsService {
       })
     );
   }
+
+  createReaction(id: string, body: string){
+    return this.http.post(`http://localhost:5000/animals/details/${id}/reaction`, body);
+  }
+
 }

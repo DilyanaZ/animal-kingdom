@@ -57,11 +57,23 @@ export class JwtInterceptor implements HttpInterceptor {
           this.router.navigate(["/home"]);
         }
 
-        if(res instanceof HttpResponse && res.body.siccess && res.url.endsWith('/create')){
+        if (
+          res instanceof HttpResponse &&
+          res.body.siccess &&
+          res.url.endsWith("/create")
+        ) {
           this.toastr.success(res.body.message, "Success!", {
             timeOut: 3000
           });
           this.router.navigate(["/mine"]);
+        }
+        if (
+          res instanceof HttpResponse &&
+          res.body.success &&
+          res.url.endsWith("reaction")
+        ) {
+          this.toastr.success(res.body.message, "Success!");
+          this.router.navigate(["/all"]);
         }
       })
     );

@@ -5,7 +5,7 @@
     <h4>Select reaction</h4>
     <mat-form-field>
         <mat-select placeholder="Reactions" [(ngModel)]="status">
-            <mat-option *ngFor="let reaction of reactions" [value]="reaction.value" name="reaction" (click)="myFunction()">
+            <mat-option *ngFor="let reaction of reactions" [value]="reaction.value" name="reaction" (click)="addAnimalReaction()">
                 {{reaction.viewValue}}
             </mat-option>
         </mat-select>

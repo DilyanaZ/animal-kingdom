@@ -23,7 +23,7 @@ const animalsRoutes: Routes = [
   
   },
    { path: "create", component: CreateAnimalComponent },
-  { path: "mine", component: MineAnimalsComponent }
+   { path: "mine", component: MineAnimalsComponent }
 
   //search component
 ];

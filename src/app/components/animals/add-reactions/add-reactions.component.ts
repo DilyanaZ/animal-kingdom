@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, Input} from "@angular/core";
 import { Reaction } from "./reaction";
 import { AnimalsService } from "../animals.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-add-reactions",
@@ -8,7 +9,7 @@ import { AnimalsService } from "../animals.service";
   styleUrls: ["./add-reactions.component.css"]
 })
 export class AddReactionsComponent implements OnInit {
-  @ViewChild("reactionInput") reactionInput: ElementRef;
+  @Input()animalId: string;
   status: any;
   reactions: Reaction[] = [
     { value: "like", viewValue: "Like" },
@@ -19,13 +20,17 @@ export class AddReactionsComponent implements OnInit {
     { value: "angry", viewValue: "Angry" }
   ];
 
-  constructor(private animalsService: AnimalsService) {}
+  constructor(
+    private animalsService: AnimalsService,
+    private router: Router) {}
 
   ngOnInit() {}
 
-  myFunction() {
+  addAnimalReaction() {
+    this.animalsService.createReaction(this.animalId, this.status);
     console.log(this.status);  // Do stuff with your selected value
- 
-  }
+    console.log(this.animalId);
+    this.router.navigate(['/all']);
+   }
 
 }
