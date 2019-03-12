@@ -5,7 +5,7 @@ import {
   ActivatedRouteSnapshot,
   RouteReuseStrategy
 } from "@angular/router";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+
 
 @Component({
   selector: "app-header",

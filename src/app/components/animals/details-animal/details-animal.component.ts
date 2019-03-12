@@ -33,6 +33,6 @@ export class DetailsAnimalComponent implements OnInit {
   }
 
   addReaction(){
-    this.isReactionAdded = true;
+    this.isReactionAdded = !this.isReactionAdded;
   }
 }
