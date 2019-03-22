@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AnimalsModule } from './components/animals/animals.module';
 
 //components
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { LoginComponent } from './authentication/login/login.component';
-import { AnimalsModule } from './components/animals/animals.module';
+import { SignupLoginFormComponent } from './authentication/signup-login-form/signup-login-form.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },
-  { path: 'signup', component: SignupComponent},
-  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupLoginFormComponent},
+  { path: 'login', component: SignupLoginFormComponent },
   { path: 'animals', loadChildren: () => AnimalsModule}
 
 ];
