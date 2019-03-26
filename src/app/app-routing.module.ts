@@ -11,8 +11,8 @@ import { SignupLoginFormComponent } from './authentication/signup-login-form/sig
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },
-  { path: 'signup', component: SignupLoginFormComponent},
-  { path: 'login', component: SignupLoginFormComponent },
+  { path: 'signup', component: SignupLoginFormComponent, data: { shouldReuse: true }},
+  { path: 'login', component: SignupLoginFormComponent, data: { shouldReuse: true } },
   { path: 'animals', loadChildren: () => AnimalsModule}
 
 ];

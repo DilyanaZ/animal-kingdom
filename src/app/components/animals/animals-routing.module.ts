@@ -11,8 +11,8 @@ import { AnimalDetailsResolver } from './animal-resolver.service';
 const animalsRoutes: Routes = [
   {
     path: "all",
-    component: AllAnimalsComponent,
-    resolve: { animals: AnimalsResolver }
+    component: AllAnimalsComponent
+    //resolve: { animals: AnimalsResolver }
   },
   { path: "stats", component: StatisticComponent },
 

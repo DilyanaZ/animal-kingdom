@@ -16,10 +16,13 @@ export class AuthService {
   signup(body: SignUpModel) {
     return this.http.post(signupUrl, body);
   }
-
-  login(body: LoginModel) {
+   login(body: any) {
     return this.http.post(loginUrl, body);
   }
+
+  // login(body: LoginModel) {
+  //   return this.http.post(loginUrl, body);
+  // }
 
   logout() {
     localStorage.removeItem('currentUser');
