@@ -44,7 +44,7 @@ export class JwtInterceptor implements HttpInterceptor {
             timeOut: 3000,
             closeButton: true
           });
-          this.router.navigate(["/login"]);
+          //this.router.navigate(["/login"]);
         }
         if (
           res instanceof HttpResponse &&
@@ -54,7 +54,7 @@ export class JwtInterceptor implements HttpInterceptor {
           this.toastr.success(res.body.message, "Success!", {
             timeOut: 3000
           });
-          this.router.navigate(["/home"]);
+         // this.router.navigate(["/all"]);
         }
 
         if (

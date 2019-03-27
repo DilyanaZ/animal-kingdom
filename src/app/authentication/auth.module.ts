@@ -12,10 +12,12 @@ import {
   ActivatedRouteSnapshot,
   DetachedRouteHandle
 } from "@angular/router";
+import { WrapperLoginComponent } from './wrapper-login/wrapper-login.component';
+import { WrapperSignupComponent } from './wrapper-signup/wrapper-signup.component';
 
 @NgModule({
   imports: [FormsModule, CommonModule, HttpClientModule,ReactiveFormsModule],
-  declarations: [SignupComponent, LoginComponent, SignupLoginFormComponent],
+  declarations: [SignupComponent, LoginComponent, SignupLoginFormComponent, WrapperLoginComponent, WrapperSignupComponent],
   providers: [AuthService, { provide: RouteReuseStrategy, useClass: CustomRouteReuseStategy }],
   exports: [SignupComponent, LoginComponent, SignupLoginFormComponent]
 })

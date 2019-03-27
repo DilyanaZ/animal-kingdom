@@ -27,6 +27,7 @@ h3 {
     -webkit-font-smoothing: antialiased;
 }
 
+.error,
 .error input {
     background-color: #E3C3C5;
 }

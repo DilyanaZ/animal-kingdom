@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
-import { User } from './signup.interface';
+import { User } from "./signup.interface";
 
 @Component({
   selector: "app-signup-login-form",
@@ -10,9 +10,11 @@ import { User } from './signup.interface';
   styleUrls: ["./signup-login-form.component.css"]
 })
 export class SignupLoginFormComponent implements OnInit {
-  isRegistered: boolean = false;
+  @Input() isRegistered: boolean = false;
   currentName: string;
   user: FormGroup;
+  isSignupSuccessful: boolean;
+  subscriptionMessage: string;
 
   profileForm = new FormGroup({
     name: new FormControl("", [
@@ -29,7 +31,7 @@ export class SignupLoginFormComponent implements OnInit {
     ])
   });
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, public router: Router) {}
 
   ngOnInit() {
     if (localStorage.getItem("name")) {
@@ -37,10 +39,10 @@ export class SignupLoginFormComponent implements OnInit {
     }
 
     this.user = new FormGroup({
-      name: new FormControl(''),
+      name: new FormControl(""),
       account: new FormGroup({
-        email: new FormControl(''),
-        password: new FormControl('')
+        email: new FormControl(""),
+        password: new FormControl("")
       })
     });
   }
@@ -51,10 +53,15 @@ export class SignupLoginFormComponent implements OnInit {
       console.log(formValues.name);
       console.log(formValues.password);
       console.log(formValues.email);
-      this.authService.signup(formValues).subscribe(data => {
-        alert([data["message"], data["success"]]);
+      this.authService.signup(formValues).subscribe(res => {
+        this.subscriptionMessage = res["message"];
+        console.log(this.subscriptionMessage);
+        if (res["success"] === true) {
+          this.isSignupSuccessful = true;
+        }
       });
     }
+    this.router.navigate(["/login"]);
     this.profileForm.reset();
   }
 
@@ -66,7 +73,12 @@ export class SignupLoginFormComponent implements OnInit {
       });
       console.log(loginForm.value);
       this.authService.login(loginForm.value).subscribe(data => {
-        alert(data["message"]);
+        if (data["success"]) {
+          this.router.navigate(["/all"]);
+        } else {
+          this.subscriptionMessage = data["message"];
+          console.log(this.subscriptionMessage);
+        }
       });
     }
   }

@@ -34,6 +34,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               "Warning!"
             );
             break;
+            default: this.toastr.error(message, "Warning!");
         }
         return throwError(err);
       })

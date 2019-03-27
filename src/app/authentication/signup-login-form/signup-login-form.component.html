@@ -1,7 +1,13 @@
 <div>
-    <h3>
+    <h3 *ngIf="!isRegistered">
         Please enter the form below to use our site!
     </h3>
+    <h3 *ngIf="isRegistered">
+        Now You can log in!
+    </h3>
+</div>
+<div>
+    <h4 *ngIf="subscriptionMessage"> {{ subscriptionMessage }}</h4>
 </div>
 <div class="container space-top">
     <!-- <form [formGroup]="profileForm" autocomplete="off" (ngSubmit)="saveProfile(profileForm.value)"> -->
@@ -34,6 +40,11 @@
             </div>
         </div>
         <button type="button" (click)="signUp(profileForm.value)" class="btn btn-secondary" [disabled]="profileForm.invalid" [hidden]="isRegistered"> Sign up </button>
+        <a routerLink='/' class="btn btn-outline-secondary m-1">Cancel</a>
         <button type="button" (click)="login(profileForm.value)" class="btn btn-secondary" [hidden]="!isRegistered"> Login </button>
     </form>
+    <!-- <p>
+        <span>Already have an account?&nbsp;</span>
+        <a routerLink="/login">Log in!</a>
+    </p> -->
 </div>
