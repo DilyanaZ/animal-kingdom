@@ -1,0 +1,58 @@
+div.container {
+    margin: 30px auto;
+    background-color: papayawhip;
+    border: 2px solid dodgerblue;
+    width: 50%;
+}
+
+form {
+    padding: 40px 20px 20px 20px;
+}
+
+h3 {
+    color: white;
+    text-shadow: 3px 3px 3px rgb(36, 35, 37);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.error,
+.error input {
+    background-color: #E3C3C5;
+}
+
+.error::-webkit-input-placeholder {
+    color: #999;
+}
+
+.error::-moz-placeholder {
+    color: #999;
+}
+
+.error:ms-input-placeholder {
+    color: #999;
+}
+
+em {
+    float: right;
+    color: #E05C65;
+    padding-left: 10px
+}
+
+div#message {
+    color: rgb(148, 13, 238);
+    background-color: rgb(26, 247, 236);
+    width: 60%;
+    margin: 0 auto;
+}
