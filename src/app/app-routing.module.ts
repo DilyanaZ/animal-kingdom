@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent},
   { path: 'signup', component: WrapperSignupComponent, canActivate:[LoginGuard]},
   { path: 'login', component: WrapperLoginComponent, canActivate:[LoginGuard]},
-  { path: 'animals', loadChildren: () => AnimalsModule}
+  { path: 'animals', loadChildren: () => AnimalsModule }
 
 ];
 

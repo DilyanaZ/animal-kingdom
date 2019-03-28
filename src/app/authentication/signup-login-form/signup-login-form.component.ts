@@ -49,15 +49,22 @@ export class SignupLoginFormComponent implements OnInit {
 
   signUp(formValues) {
     if (this.profileForm.valid && !this.isRegistered) {
-      this.isRegistered = true;
       console.log(formValues.name);
       console.log(formValues.password);
       console.log(formValues.email);
       this.authService.signup(formValues).subscribe(res => {
         this.subscriptionMessage = res["message"];
         console.log(this.subscriptionMessage);
-        if (res["success"] === true) {
+        if (res["success"]) {
+          console.log(res["success"]);
+          this.isRegistered = true;
           this.isSignupSuccessful = true;
+         
+        } else {
+          setTimeout(() => {
+            this.profileForm.reset();
+           
+          });
         }
       });
     }

@@ -49,3 +49,10 @@ em {
     color: #E05C65;
     padding-left: 10px
 }
+
+div#message {
+    color: rgb(148, 13, 238);
+    background-color: rgb(26, 247, 236);
+    width: 60%;
+    margin: 0 auto;
+}
