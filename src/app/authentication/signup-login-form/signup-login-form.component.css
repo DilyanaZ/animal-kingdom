@@ -51,8 +51,20 @@ em {
 }
 
 div#message {
-    color: rgb(148, 13, 238);
-    background-color: rgb(26, 247, 236);
-    width: 60%;
-    margin: 0 auto;
+    background-color: #f2edda;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: 2s alertAnim forwards;
+}
+
+@keyframes alertAnim {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

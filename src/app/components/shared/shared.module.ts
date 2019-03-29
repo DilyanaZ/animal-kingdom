@@ -4,9 +4,9 @@ import { RouterModule } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AuthService } from 'src/app/authentication/auth.service';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HighlightDirective } from './directives/highlight.directive';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, HighlightDirective],

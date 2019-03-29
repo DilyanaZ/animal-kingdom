@@ -7,16 +7,18 @@ import { AnimalsRoutingModule } from './components/animals/animals-routing.modul
 import { HomeComponent } from './components/home/home.component';
 import { WrapperLoginComponent } from './authentication/wrapper-login/wrapper-login.component';
 import { WrapperSignupComponent } from './authentication/wrapper-signup/wrapper-signup.component';
+
 import { LoginGuard } from './authentication/guards/login.guard';
+import { AuthGuard } from './authentication/guards/auth.guard';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent},
   { path: "signup", component: WrapperSignupComponent, canActivate:[LoginGuard]},
   { path: "login", component: WrapperLoginComponent, canActivate:[LoginGuard]},
-  { path: "animals", component: HomeComponent},
-  { path: "animals", loadChildren: "./components/animals/animals-routing.module#AnimalsModule" }
-
+  //{ path: "animals", component: HomeComponent},
+  //{ path: "animals", loadChildren: "./components/animals/animals.module#AnimalsModule" }
+  { path: "animals", loadChildren: () => AnimalsModule, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

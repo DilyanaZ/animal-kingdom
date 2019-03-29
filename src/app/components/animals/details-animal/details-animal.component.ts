@@ -19,6 +19,7 @@ export class DetailsAnimalComponent implements OnInit {
   animal: any;
   isReactionAdded: boolean = false;
   isCommentAdded:boolean = false;
+
   constructor(
     private animalsService: AnimalsService,
     private route: ActivatedRoute
@@ -39,6 +40,7 @@ export class DetailsAnimalComponent implements OnInit {
   addReaction(){
     this.isReactionAdded = !this.isReactionAdded;
   }
+  
   addComment(){
     this.isCommentAdded = !this.isCommentAdded;
   }
