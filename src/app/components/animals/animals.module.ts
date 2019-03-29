@@ -2,7 +2,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { AnimalsRoutingModule } from "./animals-routing.module";
-import { BrowserModule } from "@angular/platform-browser";
+//import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { FileUploadModule } from "ng2-file-upload";
 import { NgxPaginationModule } from "ngx-pagination";
@@ -19,6 +19,7 @@ import { DetailsAnimalComponent } from "./details-animal/details-animal.componen
 import { MineAnimalsComponent } from "./mine-animals/mine-animals.component";
 //Services
 import { AnimalsService } from "./animals.service";
+import { CreateReactiveComponent } from './create-reactive/create-reactive.component';
 
 
 @NgModule({
@@ -30,12 +31,13 @@ import { AnimalsService } from "./animals.service";
     MineAnimalsComponent,
     StatisticComponent,
     CommentsFormComponent,
-    AddReactionsComponent
+    AddReactionsComponent,
+    CreateReactiveComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    BrowserModule,
+    //BrowserModule,
     AnimalsRoutingModule,
     FileUploadModule,
     NgxPaginationModule,

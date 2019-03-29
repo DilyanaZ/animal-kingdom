@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Animal } from "../../models/animal";
+//import { Animal } from "../../models/animal";
 import { ActivatedRoute } from "@angular/router";
 import { AnimalsService } from "../animals.service";
 import { Observable } from "rxjs";

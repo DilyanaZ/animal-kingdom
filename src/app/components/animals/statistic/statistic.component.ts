@@ -12,10 +12,13 @@ export class StatisticComponent implements OnInit {
   constructor(public animalsService: AnimalsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.animalsService
-        .getStatistic()
-        .subscribe(data => (this.statistic = data));
-    }, 6 * 1000);
+    this.animalsService
+      .getStatistic()
+      .subscribe(data => (this.statistic = data));
+    // setTimeout(() => {
+    //   this.animalsService
+    //     .getStatistic()
+    //     .subscribe(data => (this.statistic = data));
+    // }, 6 * 1000);
   }
 }
