@@ -2,7 +2,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { AnimalsRoutingModule } from "./animals-routing.module";
-//import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { FileUploadModule } from "ng2-file-upload";
 import { NgxPaginationModule } from "ngx-pagination";
@@ -37,7 +37,7 @@ import { CreateReactiveComponent } from './create-reactive/create-reactive.compo
   imports: [
     CommonModule,
     FormsModule,
-    //BrowserModule,
+    BrowserModule,
     AnimalsRoutingModule,
     FileUploadModule,
     NgxPaginationModule,
