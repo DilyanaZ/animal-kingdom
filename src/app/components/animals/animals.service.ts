@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { CreateAnimalModel } from "../models/create-animal.model";
 import { AnimalModel } from "../models/animal.model";
 import { tap, map } from "rxjs/operators";
-import { Animal } from '../models/animal';
+//import { Animal } from '../models/animal';
 
 const createUrl = "http://localhost:5000/animals/create";
 const allUrl = "http://localhost:5000/animals/all";
