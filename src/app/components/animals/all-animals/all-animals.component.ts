@@ -22,9 +22,9 @@ export class AllAnimalsComponent implements OnInit {
   ngOnInit() {
     this.animalsService.getAllAnimals().subscribe(data => {
       this.animals = data;
-      console.log(this.animals);
     });
   }
+  
   changePage(page) {
     this.currentPage = page;
   }
