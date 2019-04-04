@@ -12,12 +12,12 @@
             </div>
             <div class="form-group">
                 <label for="age">Age:</label>
-                <input type="number" class="form-control" id="age" placeholder="age (required)" formControlName="age">
+                <input type="number" class="form-control" id="age" placeholder="age (required)" min="0" formControlName="age">
                 <div *ngIf="!animalForm.controls['age'].valid && animalForm.controls['age'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
                 <label for="color">Choose color:</label>
-                <input type="color" style="width:200px" class="form-control d-inline-block mx-5" #color id="color" formControlName="color">
+                <input type="color" class="form-control" #color id="color" formControlName="color">
                 <span class="d-inline-block">{{color.value}}</span>
                 <div *ngIf="!animalForm.controls['color'].valid && animalForm.controls['color'].touched" class="alert">This field is required!</div>
             </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="number" class="form-control" id="price" placeholder="price (required)" formControlName="price">
+                <input type="number" class="form-control" id="price" placeholder="price (required)" min="0" formControlName="price">
                 <div *ngIf="!animalForm.controls['price'].valid && animalForm.controls['price'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">

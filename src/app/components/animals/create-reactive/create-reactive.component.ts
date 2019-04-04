@@ -1,10 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormGroup,
-  FormBuilder,
-  Validators
-} from "@angular/forms";
-import { CreateAnimal} from "../../models/animal.model";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { CreateAnimal } from "../../models/animal.model";
 import { AnimalsService } from "../animals.service";
 
 @Component({
@@ -16,12 +12,11 @@ export class CreateReactiveComponent implements OnInit {
   animalForm: FormGroup;
   animal: CreateAnimal;
   imageFile: File = null;
-  
+
   responseMessage: any;
 
   constructor(private fb: FormBuilder, private animalsService: AnimalsService) {
-    this.animal = new CreateAnimal ("", 0, "", "", 0, "");
-  
+    this.animal = new CreateAnimal("", 0, "#c0c0c0", "", 0, "");
   }
 
   ngOnInit() {
@@ -41,8 +36,13 @@ export class CreateReactiveComponent implements OnInit {
 
   save(formValues) {
     console.log(formValues);
+    let imageUrl = formValues["image"].split("\\");
+    console.log(imageUrl);
+    formValues["image"] = imageUrl[imageUrl.length - 1];
+    console.log(formValues["image"]);
     this.animal = formValues;
     console.log("ANIMAL" + JSON.stringify(this.animal));
+
     this.animalsService.createAnimal(this.animal).subscribe(res => {
       this.responseMessage = res;
       console.log("MESSAGE" + JSON.stringify(this.responseMessage));
@@ -53,8 +53,6 @@ export class CreateReactiveComponent implements OnInit {
     if ($event.target.files.length > 0) {
       this.imageFile = $event.target.files[0];
       this.animal.image = this.imageFile["name"];
-      console.log(this.imageFile["name"]);
-      console.log(this.animal.image);
     }
   }
 
