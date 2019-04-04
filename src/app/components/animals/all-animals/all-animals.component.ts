@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AnimalModel } from "../../models/animal.model";
+import { Animal } from "../../models/animal.model";
 import { AnimalsService } from "../animals.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./all-animals.component.css"]
 })
 export class AllAnimalsComponent implements OnInit {
-  animals: Array<AnimalModel> = [];
+  animals: Array<Animal> = [];
   pageSize: number = 3;
   currentPage: number = 1;
 
@@ -20,7 +20,10 @@ export class AllAnimalsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.animals = this.animalsService.animals;
+    this.animalsService.getAllAnimals().subscribe(data => {
+      this.animals = data;
+      console.log(this.animals);
+    });
   }
   changePage(page) {
     this.currentPage = page;
