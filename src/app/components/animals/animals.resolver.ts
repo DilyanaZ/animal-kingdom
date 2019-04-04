@@ -6,22 +6,23 @@ import {
 } from "@angular/router";
 import { AnimalsService } from "./animals.service";
 import { Observable } from "rxjs";
-import { AnimalModel } from "../models/animal.model";
+import { Animal } from "../models/animal.model";
 
 @Injectable({
   providedIn: "root"
 })
-export class AnimalsResolver implements Resolve<AnimalModel[]> {
+
+export class AnimalsResolver implements Resolve<Animal[]> {
   constructor(public animalsService: AnimalsService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<AnimalModel[]> {
-    if (this.animalsService.animals == null) {
-      const message = "Animals did not been found";
-      alert(message);
-    }
+  ): Observable<Animal[]> {
+    // if (this.animalsService.animals == null) {
+    //   const message = "Animals did not been found";
+    //   alert(message);
+    // }
     return this.animalsService.getAllAnimals();
   }
 }

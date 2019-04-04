@@ -8,3 +8,8 @@ h4 {
 span {
     color: rgb(54, 78, 155);
 }
+
+image {
+    width: 250px;
+    height: auto;
+}

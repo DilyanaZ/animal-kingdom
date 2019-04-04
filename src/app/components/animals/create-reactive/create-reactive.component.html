@@ -1,50 +1,54 @@
 <p>
     create-reactive works!
 </p>
-<div class="container">
+<div class="container" [ngStyle]="getMyStyles()">
     <h2>Create an Animal</h2>
     <div class="page">
-        <form #animalForm="ngForm" (ngSubmit)="save()">
+        <form [formGroup]="animalForm" (ngSubmit)="save(animalForm.value)">
             <div class="form-group">
                 <label for="name">Animal name:</label>
-                <input type="text" class="form-control" id="name" placeholder="name(required)" name="animalName">
-                <!-- <div [hidden]="animalName.valid || animalName.untouched" class="alert alert-danger">This field is required!</div> -->
+                <input type="text" class="form-control" id="name" placeholder="name (required)" formControlName="name">
+                <div *ngIf="!animalForm.controls['name'].valid && animalForm.controls['name'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
                 <label for="age">Age:</label>
-                <input type="number" class="form-control" id="age" placeholder="age(required)" name="age">
-                <!-- <div [hidden]="age.valid || age.untouched" class="alert alert-danger">This field is required!</div> -->
+                <input type="number" class="form-control" id="age" placeholder="age (required)" formControlName="age">
+                <div *ngIf="!animalForm.controls['age'].valid && animalForm.controls['age'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
-                <label for="color">Color:</label>
-                <input type="text" class="form-control" id="color" placeholder="color(required)" name="color">
-                <!-- <div [hidden]="color.valid || color.pristine" class="alert alert-danger">This field is required!</div> -->
+                <label for="color">Choose color:</label>
+                <input type="color" style="width:200px" class="form-control d-inline-block mx-5" #color id="color" formControlName="color">
+                <span class="d-inline-block">{{color.value}}</span>
+                <div *ngIf="!animalForm.controls['color'].valid && animalForm.controls['color'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
                 <label for="type">Animal type:</label>
-                <select class="form-control" id="type" name="animalType">
+                <select class="form-control" id="type" formControlName="type">
                 <option>Cat</option>
                 <option>Dog</option>
                 <option>Bunny</option>
                 <option>Exotic</option>
                 <option>Other</option>
-             </select>
-                <!-- <div [hidden]="animalType.valid || animalType.untouched" class="alert alert-danger">This field is required!</div> -->
+                </select>
+                <div *ngIf="!animalForm.controls['type'].valid && animalForm.controls['type'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="number" class="form-control" id="price" placeholder="price(required)" name="price">
-                <!-- <div [hidden]="price.valid || price.untouched" class="alert alert-danger">This field is required!</div> -->
+                <input type="number" class="form-control" id="price" placeholder="price (required)" formControlName="price">
+                <div *ngIf="!animalForm.controls['price'].valid && animalForm.controls['price'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
-                <label for="image">Image file input</label>
-                <!-- <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*" name="image"> -->
+                <label for="image">Image file input:</label>
+                <input type="file" class="form-control-file d-inline-block" id="image" (change)="onFileSelected($event)" accept="image/*" formControlName="image">
+                <div *ngIf="!animalForm.controls['image'].valid && animalForm.controls['image'].touched" class="alert">This field is required!</div>
             </div>
             <div class="form-group">
-                <label for="breed">Color:</label>
-                <input type="text" class="form-control" id="breed" placeholder="breed(optional)">
+                <label for="breed">Breed:</label>
+                <input type="text" class="form-control" placeholder="breed(optional)" formControlName="breed">
+                <div *ngIf="!animalForm.controls['breed'].valid && animalForm.controls['image'].touched" class="alert">Breed must be more than 3 symbols!</div>
             </div>
-            <button type="submit" [disabled]="animalForm.form.invalid" class="btn btn-outline-info">Save</button>
+            <button type="submit" class="btn btn-outline-info" [disabled]="!animalForm.valid">Save</button>
+            <!-- <button type="button" (click)="defaultAnimal()">show default data</button> -->
         </form>
     </div>
 </div>

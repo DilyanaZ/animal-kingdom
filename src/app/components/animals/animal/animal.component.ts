@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { AnimalModel } from '../../models/animal.model';
+import { Animal } from '../../models/animal.model';
 
 @Component({
   selector: 'app-animal',
@@ -7,7 +7,9 @@ import { AnimalModel } from '../../models/animal.model';
   styleUrls: ['./animal.component.css']
 })
 export class AnimalComponent implements OnInit {
-  @Input()animal: AnimalModel;
+
+  @Input()animal: Animal;
+
   constructor() { }
 
   ngOnInit() {

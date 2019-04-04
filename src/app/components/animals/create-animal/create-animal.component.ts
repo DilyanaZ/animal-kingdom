@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AnimalsService } from "../animals.service";
-import { CreateAnimalModel } from "../../models/create-animal.model";
+import { CreateAnimal } from "../../models/animal.model";
 import { FileUploader } from "ng2-file-upload/ng2-file-upload";
 
 @Component({
@@ -9,11 +9,11 @@ import { FileUploader } from "ng2-file-upload/ng2-file-upload";
   styleUrls: ["./create-animal.component.css"]
 })
 export class CreateAnimalComponent implements OnInit {
-  animalModel: CreateAnimalModel;
+  animalModel: CreateAnimal;
   imageFile: File = null;
 
   constructor(private animalsService: AnimalsService) {
-    this.animalModel = new CreateAnimalModel("", 0, "", "", 0, "");
+    this.animalModel = new CreateAnimal("", 0, "", "", 0, "");
   }
 
   ngOnInit() {}
