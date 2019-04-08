@@ -1,15 +1,3 @@
-// export class AnimalModel {
-
-//   constructor(
-//     public name: string,
-//     public age: number,
-//     public color: string,
-//     public type: string,
-//     public price: number,
-//     public image: string,
-//     public breed?: string
-//   ) {}
-// }
 export interface IAnimal {
   name: string;
   age: number;

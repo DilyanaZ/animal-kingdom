@@ -48,7 +48,6 @@
                 <div *ngIf="!animalForm.controls['breed'].valid && animalForm.controls['image'].touched" class="alert">Breed must be more than 3 symbols!</div>
             </div>
             <button type="submit" class="btn btn-outline-info" [disabled]="!animalForm.valid">Save</button>
-            <!-- <button type="button" (click)="defaultAnimal()">show default data</button> -->
         </form>
     </div>
 </div>

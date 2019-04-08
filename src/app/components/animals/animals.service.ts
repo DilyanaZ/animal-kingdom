@@ -8,15 +8,13 @@ const allUrl = "http://localhost:5000/animals/all";
 const detailsUrl = "http://localhost:5000/animals/details/";
 const myAnimalsUrl = "http://localhost:5000/animals/mine";
 const deleteUrl = "http://localhost:5000/animals/delete/";
-// const searchUrl = "http://localhost:5000/furniture/all?search=";
+//const searchUrl = "http://localhost:5000/furniture/all?search=";
 const statsUrl = "http://localhost:5000/stats";
 
 
 @Injectable()
 export class AnimalsService {
- // animals: Array<Animal> = [];
-
-
+ 
   constructor(public http: HttpClient) {}
 
   createAnimal(body: CreateAnimal) {

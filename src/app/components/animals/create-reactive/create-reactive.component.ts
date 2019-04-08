@@ -37,15 +37,11 @@ export class CreateReactiveComponent implements OnInit {
   save(formValues) {
     console.log(formValues);
     let imageUrl = formValues["image"].split("\\");
-    console.log(imageUrl);
     formValues["image"] = imageUrl[imageUrl.length - 1];
     console.log(formValues["image"]);
     this.animal = formValues;
-    console.log("ANIMAL" + JSON.stringify(this.animal));
-
     this.animalsService.createAnimal(this.animal).subscribe(res => {
       this.responseMessage = res;
-      console.log("MESSAGE" + JSON.stringify(this.responseMessage));
     });
   }
 
@@ -63,11 +59,4 @@ export class CreateReactiveComponent implements OnInit {
     };
     return myStyles;
   }
-
-  // defaultAnimal(): void {
-  //   this.animalForm.patchValue({
-  //     name: "Rori",
-  //     animalType: "Dog"
-  //   });
-  // }
 }

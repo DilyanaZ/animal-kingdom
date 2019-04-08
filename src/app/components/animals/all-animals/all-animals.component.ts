@@ -20,7 +20,7 @@ export class AllAnimalsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-   this.animalsService.getAllAnimals().subscribe(data => {
+   this.animalsService.getAllAnimals().subscribe((data: Array<Animal>)=> {
       this.animals = data;
     });
   }
